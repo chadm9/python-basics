@@ -13,13 +13,17 @@ import random
 # else:
 #     print "You are underage!"
 
-random_number = random.randint(1, 10)
-not_guessed = True
-number_of_guesses = 0
-play_again = True
-again = 'T'
+#random_number = random.randint(1, 10)
+#not_guessed = True
+#number_of_guesses = 0
+#play_again = True
+#again = 'T'
 
-while play_again:
+while True:
+    random_number = random.randint(1, 10)
+    not_guessed = True
+    number_of_guesses = 0
+
     while not_guessed:
         guess = raw_input("Guess a number from 1-10: ")
         if int(guess) == random_number:
@@ -40,9 +44,5 @@ while play_again:
     again = raw_input("Play again (Y/N)?")
     if again == 'N':
         break
-    else:
-        not_guessed = True
-        random_number = random.randint(1, 10)
-        number_of_guesses = 0
 
 
