@@ -35,10 +35,12 @@ def listAll():
 
 def reverseLookup():
     number = raw_input("Enter the phone number to search for: ")
-    for i,j in phonebook_data.items():
-        if j == number:
-            print "Name: %s\nNumber: %s" % (i, j)
-
+    if phonebook_data.values().count(number) == 0:
+        print "Number not in phonebook."
+    else:
+        for i,j in phonebook_data.items():
+            if j == number:
+                print "Name: %s\nNumber: %s" % (i, j)
 def quit():
     return exit()
 
