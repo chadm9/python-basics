@@ -12,7 +12,7 @@ def getInteger():
             return input
     except:
         print "Invalid input.  Please provide an integer."
-        return getInteger
+        return getInteger()
 
 def lookUp():
     input = raw_input("Enter a name to look up: ")
@@ -34,7 +34,8 @@ def deleteEntry():
         del phonebook_data[input]
 
 def listAll():
-    print phonebook_data
+    for i,j in phonebook_data.items():
+        print "Name: %s\nNumber: %s" % (i, j)    
 
 def reverseLookup():
     number = raw_input("Enter the phone number to search for: ")
