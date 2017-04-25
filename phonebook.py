@@ -5,7 +5,11 @@ phonebook_data = {"Melissa": "404-235-5428", "Joe": "404-235-2125", "Mike": "770
 def getInteger():
     try:
         input = int(raw_input("Enter your selection: "))
-        return input
+        if input > 6:
+            print "Option %d not found. Please enter an integer 1-6" % (input)
+            return getInteger()
+        else:
+            return input
     except:
         print "Invalid input.  Please provide an integer."
         return getInteger
@@ -26,7 +30,6 @@ def deleteEntry():
     input = raw_input("Enter the name to delete: ")
     if not phonebook_data.has_key(input):
         print "Name not found in phonebook."
-
     else:
         del phonebook_data[input]
 
